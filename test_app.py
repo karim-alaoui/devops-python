@@ -12,5 +12,11 @@ class BasicTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn('New York', response.data.decode('utf-8'))
 
+    def test_countries(self):
+        response = self.app.get('/countries')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('USA', response.data.decode('utf-8'))
+
+
 if __name__ == "__main__":
     unittest.main()
