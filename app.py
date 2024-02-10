@@ -8,7 +8,7 @@ def hello_world():
 
 @app.route('/cities')
 def cities():
-    cities_list = ["London", "Paris", "Berlin", "Tokyo", "Sydney", "Toronto", "San Francisco", "Rome", "Shanghai"]
+    cities_list = ["New York", "London", "Paris", "Berlin", "Tokyo", "Sydney", "Toronto", "San Francisco", "Rome", "Shanghai"]
     return jsonify(cities_list)
 
 @app.route('/countries')
