@@ -8,12 +8,12 @@ def hello_world():
 
 @app.route('/cities')
 def cities():
-    cities_list = ["New York", "London", "Paris", "Berlin", "Tokyo", "Sydney", "Toronto", "San Francisco", "Rome", "Shanghai"]
+    cities_list = ["fes", "New York", "London", "Paris", "Berlin", "Tokyo", "Sydney", "Toronto", "San Francisco", "Rome", "Shanghai"]
     return jsonify(cities_list)
 
 @app.route('/countries')
 def countries():
-    countries_list = ["USA", "Canada", "UK", "Australia", "Germany"]
+    countries_list = ["Morocco", "USA", "Canada", "UK", "Australia", "Germany"]
     return jsonify(countries_list)
 
 if __name__ == '__main__':
