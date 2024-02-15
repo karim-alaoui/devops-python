@@ -33,10 +33,18 @@ jobs:
         with:
           ref: development
 
-      - name: Merge to Staging Branch
+      - name: Set up Git Config
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "karim3alaoui@gmail.com"
+          git config --global user.name "karim-alaoui"
+
+      - name: Checkout Staging Branch
+        run: |
+          git fetch
           git checkout staging
-          git merge development
+
+      - name: Merge Development into Staging
+        run: |
+          git merge origin/development
           git push origin staging
+        shell: /usr/bin/bash -e {0}
