@@ -45,6 +45,6 @@ jobs:
 
       - name: Merge Development into Staging
         run: |
-          git merge origin/development
+          git merge origin/development --allow-unrelated-histories
           git push origin staging
         shell: /usr/bin/bash -e {0}
