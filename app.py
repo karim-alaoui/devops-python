@@ -18,7 +18,7 @@ def countries():
 
 @app.route('/continents')
 def continents():
-    continents_list = ["Asia", "Africa", "North America", "South America", "Antarctica", "Europe", "Australia"]
+    continents_list = ["Asia", "Africa", "North America", "South America", "Europe"]
     return jsonify(continents_list)
 
 if __name__ == '__main__':
