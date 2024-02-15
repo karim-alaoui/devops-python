@@ -21,5 +21,11 @@ jobs:
           TARGET: "/var/www/html"
           EXCLUDE: "/app.wsgi,.git/*,.github/*"
 
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
       - name: Restart Apache
-        run: ssh -i "${SSH_PRIVATE_KEY}" -o StrictHostKeyChecking=no ec2-user@ec2-3-106-170-247.ap-southeast-2.compute.amazonaws.com "sudo systemctl restart apache2"
+        run: ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ec2-user@ec2-3-106-170-247.ap-southeast-2.compute.amazonaws.com "sudo systemctl restart apache2"
