@@ -22,4 +22,4 @@ jobs:
           EXCLUDE: "/app.wsgi,.git/*,.github/*"
 
       - name: Restart Apache
-        run: ssh -i /home/runner/.ssh/deploy_key -o StrictHostKeyChecking=no ec2-user@ec2-13-210-247-21.ap-southeast-2.compute.amazonaws.com "sudo systemctl restart httpd.service"
+        run: ssh -i /home/runner/.ssh/deploy_key -o StrictHostKeyChecking=no ec2-user@ec2-3-27-167-226.ap-southeast-2.compute.amazonaws.com "sudo systemctl restart httpd.service"
